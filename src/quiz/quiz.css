@@ -8,6 +8,11 @@ body {
 }
 
 
+ol.questions > li {
+	margin: 2em 0;
+}
+
+
 fieldset {
 	border: none;
 }
@@ -31,4 +36,15 @@ ul.choices > li {
 ul.choices > li > input {
 	position: absolute;
 	margin-left: -1.2em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+.note {
+	background: rgba(231,228,157,.25);
+	border: 5px solid rgba(231,228,157,.15);
+	font-style: italic;
+	padding: 10px 15px;
 }
