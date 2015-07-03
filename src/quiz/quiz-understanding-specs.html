@@ -85,6 +85,61 @@
 				</ul>
 			</fieldset>
 		</li>
+
+
+		<li>
+			<fieldset id="q2">
+				<legend>
+					<span class="label">
+					<p>Given a web page containing the following table:</p>
+<pre><code class="language-markup">
+	&lt;table id="my-table">
+		&lt;thead>
+		…
+	&lt;/table>
+</code></pre>
+					<p>When the following code is run:</p>
+<pre><code class="language-javascript">document.getElementById( 'my-table' ).deleteCaption();</code></pre>
+
+					<p>What is the result?</p>
+				</span>
+				</legend>
+				<ul class="choices">
+					<li><input type="radio" name="q2" value="a" id="q2-a"><label for="q2-a">Nothing</label></li>
+					<li><input type="radio" name="q2" value="b" id="q2-b"><label for="q2-b">DOMException NOT_FOUND_ERR is raised</label></li>
+				</ul>
+			</fieldset>
+		</li>
+
+
+
+		<li>
+			<fieldset id="q3">
+				<legend>
+					<span class="label">
+					<p>Given a web page containing the following table:</p>
+<pre><code class="language-markup">
+	&lt;table id="my-table">
+		&lt;caption>My caption&lt;/caption>
+		&lt;thead>
+		…
+	&lt;/table>
+</code></pre>
+					<p>When the following code is run:</p>
+<pre><code class="language-javascript">var result = document.getElementById( 'my-table' ).deleteCaption();</code></pre>
+
+					<p>What is the value of <code>result</code>?</p>
+				</span>
+				</legend>
+				<ul class="choices">
+					<li><input type="radio" name="q3" value="a" id="q3-a"><label for="q3-a">null</label></li>
+					<li><input type="radio" name="q3" value="b" id="q3-b"><label for="q3-b">the <code>caption</code> element that was removed</label></li>
+					<li><input type="radio" name="q3" value="c" id="q3-c"><label for="q3-c">true</label></li>
+					<li><input type="radio" name="q3" value="d" id="q3-d"><label for="q3-d">undefined</label></li>
+				</ul>
+			</fieldset>
+		</li>
+
 	</ol>
 
 </form>
