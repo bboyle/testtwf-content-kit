@@ -1,0 +1,25 @@
+{
+  "name": "testtwf-content-kit",
+  "version": "1.0.0",
+  "description": "Resources for teaching about Test the Web Forward.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bboyle/testtwf-content-kit.git"
+  },
+  "keywords": [
+    "test-twf"
+  ],
+  "author": "Ben Boyle <benjamins.boyle@gmail.com>",
+  "license": "Mozilla Public License v2.0",
+  "bugs": {
+    "url": "https://github.com/bboyle/testtwf-content-kit/issues"
+  },
+  "homepage": "https://github.com/bboyle/testtwf-content-kit#readme",
+  "dependencies": {
+    "prismjs": "0.0.1"
+  }
+}

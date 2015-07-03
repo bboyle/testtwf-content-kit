@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Understanding web specifications</title>
+	<link href="../../node_modules/prismjs/themes/prism.css" rel="stylesheet">
+	<link rel="stylesheet" href="quiz.css">
+</head>
+<body>
+
+<h1>Understanding web specifications</h1>
+
+<p>Reading web standards and understanding the details is a skill. A simple statement about one element may imply more detail than is immediately apparent. It is also important not to invent details which are not explicitly documented.</p>
+
+<p>Take the quiz below to test your improve your understanding.</p>
+
+<blockquote>
+	<code class="language-idl">void deleteCaption();</code>
+
+	<p>The <code>deleteCaption()</code> method must remove the first <code>caption</code> element child of the <code>table</code> element, if any.</p>
+</blockquote>
+
+<form action="">
+	<ol class="questions">
+		<li>
+			<fieldset id="q1">
+				<legend>
+					<span class="label">
+					<p>Given a web page containing the following table:</p>
+<pre><code class="language-markup">
+	&lt;table id="my-table">
+		&lt;caption>First caption&lt;/caption>
+		&lt;caption>Second caption&lt;/caption>
+		&lt;thead>
+		…
+	&lt;/table>
+</code></pre>
+					<p>When the following code is run:</p>
+<pre><code class="language-javascript">document.getElementById( 'my-table' ).deleteCaption();</code></pre>
+
+					<p>What is the result?</p>
+				</span>
+				</legend>
+				<ul class="choices">
+					<li><input type="radio" name="q1" value="a" id="q1-a"><label for="q1-a">
+					The first caption is removed
+<pre><code class="language-markup">
+	&lt;table id="my-table">
+		&lt;caption>Second caption&lt;/caption>
+		&lt;thead>
+		…
+	&lt;/table>
+</code></pre>
+					</label></li>
+					<li><input type="radio" name="q1" value="b" id="q1-b"><label for="q1-b">
+					The last caption is removed
+<pre><code class="language-markup">
+	&lt;table id="my-table">
+		&lt;caption>First caption&lt;/caption>
+		&lt;thead>
+		…
+	&lt;/table>
+</code></pre>
+					</label></li>
+					<li><input type="radio" name="q1" value="c" id="q1-c"><label for="q1-c">
+					All captions are removed
+<pre><code class="language-markup">
+	&lt;table id="my-table">
+		&lt;thead>
+		…
+	&lt;/table>
+</code></pre>
+					</label></li>
+					<li><input type="radio" name="q1" value="d" id="q1-d"><label for="q1-d">
+					No captions are removed
+<pre><code class="language-markup">
+	&lt;table id="my-table">
+		&lt;caption>First caption&lt;/caption>
+		&lt;caption>Second caption&lt;/caption>
+		&lt;thead>
+		…
+	&lt;/table>
+</code></pre>
+					</label></li>
+				</ul>
+			</fieldset>
+		</li>
+	</ol>
+
+</form>
+
+
+<script src="../../node_modules/prismjs/prism.js"></script>
+</body>
+</html>
