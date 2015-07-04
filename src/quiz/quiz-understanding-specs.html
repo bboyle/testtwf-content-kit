@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<title>Understanding web specifications</title>
-	<link href="../../node_modules/prismjs/themes/prism.css" rel="stylesheet">
-	<link rel="stylesheet" href="quiz.css">
+  <meta charset="UTF-8">
+  <title>Understanding web specifications</title>
+  <link href="../../node_modules/prismjs/themes/prism.css" rel="stylesheet">
+  <link rel="stylesheet" href="quiz.css">
 </head>
 <body>
 
@@ -15,168 +15,168 @@
 <p>Take the quiz below to test your improve your understanding.</p>
 
 <blockquote>
-	<code class="language-idl">void deleteCaption();</code>
+  <code class="language-idl">void deleteCaption();</code>
 
-	<p>The <code>deleteCaption()</code> method must remove the first <code>caption</code> element child of the <code>table</code> element, if any.</p>
+  <p>The <code>deleteCaption()</code> method must remove the first <code>caption</code> element child of the <code>table</code> element, if any.</p>
 </blockquote>
 
 <form action="">
-	<ol class="questions">
-		<li>
-			<fieldset id="q1">
-				<legend>
-					<span class="label">
-					<p>Given a web page containing the following table:</p>
+  <ol class="questions">
+    <li>
+      <fieldset id="q1">
+        <legend>
+          <span class="label">
+          <p>Given a web page containing the following table:</p>
 <pre><code class="language-markup">
-	&lt;table id="my-table">
-		&lt;caption>First caption&lt;/caption>
-		&lt;caption>Second caption&lt;/caption>
-		&lt;thead>
-		…
-	&lt;/table>
+  &lt;table id="my-table">
+    &lt;caption>First caption&lt;/caption>
+    &lt;caption>Second caption&lt;/caption>
+    &lt;thead>
+    …
+  &lt;/table>
 </code></pre>
-					<p>When the following code is run:</p>
+          <p>When the following code is run:</p>
 <pre><code class="language-javascript">document.getElementById( 'my-table' ).deleteCaption();</code></pre>
 
-					<p>What is the result?</p>
-				</span>
-				</legend>
-				<ul class="choices">
-					<li><input type="radio" name="q1" value="a" id="q1-a"><label for="q1-a">
-					The first caption is removed
+          <p>What is the result?</p>
+        </span>
+        </legend>
+        <ul class="choices">
+          <li><input type="radio" name="q1" value="a" id="q1-a"><label for="q1-a">
+          The first caption is removed
 <pre><code class="language-markup">
-	&lt;table id="my-table">
-		&lt;caption>Second caption&lt;/caption>
-		&lt;thead>
-		…
-	&lt;/table>
+  &lt;table id="my-table">
+    &lt;caption>Second caption&lt;/caption>
+    &lt;thead>
+    …
+  &lt;/table>
 </code></pre>
-					</label></li>
-					<li><input type="radio" name="q1" value="b" id="q1-b"><label for="q1-b">
-					The last caption is removed
+          </label></li>
+          <li><input type="radio" name="q1" value="b" id="q1-b"><label for="q1-b">
+          The last caption is removed
 <pre><code class="language-markup">
-	&lt;table id="my-table">
-		&lt;caption>First caption&lt;/caption>
-		&lt;thead>
-		…
-	&lt;/table>
+  &lt;table id="my-table">
+    &lt;caption>First caption&lt;/caption>
+    &lt;thead>
+    …
+  &lt;/table>
 </code></pre>
-					</label></li>
-					<li><input type="radio" name="q1" value="c" id="q1-c"><label for="q1-c">
-					All captions are removed
+          </label></li>
+          <li><input type="radio" name="q1" value="c" id="q1-c"><label for="q1-c">
+          All captions are removed
 <pre><code class="language-markup">
-	&lt;table id="my-table">
-		&lt;thead>
-		…
-	&lt;/table>
+  &lt;table id="my-table">
+    &lt;thead>
+    …
+  &lt;/table>
 </code></pre>
-					</label></li>
-					<li><input type="radio" name="q1" value="d" id="q1-d"><label for="q1-d">
-					No captions are removed. Tables are only allowed to have one caption so this is an error.
+          </label></li>
+          <li><input type="radio" name="q1" value="d" id="q1-d"><label for="q1-d">
+          No captions are removed. Tables are only allowed to have one caption so this is an error.
 <pre><code class="language-markup">
-	&lt;table id="my-table">
-		&lt;caption>First caption&lt;/caption>
-		&lt;caption>Second caption&lt;/caption>
-		&lt;thead>
-		…
-	&lt;/table>
+  &lt;table id="my-table">
+    &lt;caption>First caption&lt;/caption>
+    &lt;caption>Second caption&lt;/caption>
+    &lt;thead>
+    …
+  &lt;/table>
 </code></pre>
-					</label></li>
-				</ul>
-			</fieldset>
+          </label></li>
+        </ul>
+      </fieldset>
 
-			<div class="note">
-				<p>The correct answer is <b>the first caption is removed</b>.</p>
+      <div class="note">
+        <p>The correct answer is <b>the first caption is removed</b>.</p>
 
-				<ul>
-					<li>The specification clearly states the first caption is removed.</li>
-					<li>The last caption would not be removed. The specification calls for the <strong>first</strong> caption to be removed.</li>
-					<li>The specification specifically states that only the first caption will be removed. The second caption will not be removed.</li>
-					<li>Although a <code>table</code> should not have more than one <code>caption</code>, nothing prevents authors from making mistakes. Specifications need to go beyond what happens with valid markup and provide consistent advice for handling markup errors. In this case, the specification clearly states that the first caption will be removed.</li>
-				</ul>
-			</div>
-		</li>
+        <ul>
+          <li>The specification clearly states the first caption is removed.</li>
+          <li>The last caption would not be removed. The specification calls for the <strong>first</strong> caption to be removed.</li>
+          <li>The specification specifically states that only the first caption will be removed. The second caption will not be removed.</li>
+          <li>Although a <code>table</code> should not have more than one <code>caption</code>, nothing prevents authors from making mistakes. Specifications need to go beyond what happens with valid markup and provide consistent advice for handling markup errors. In this case, the specification clearly states that the first caption will be removed.</li>
+        </ul>
+      </div>
+    </li>
 
 
-		<li>
-			<fieldset id="q2">
-				<legend>
-					<span class="label">
-					<p>Given a web page containing the following table:</p>
+    <li>
+      <fieldset id="q2">
+        <legend>
+          <span class="label">
+          <p>Given a web page containing the following table:</p>
 <pre><code class="language-markup">
-	&lt;table id="my-table">
-		&lt;thead>
-		…
-	&lt;/table>
+  &lt;table id="my-table">
+    &lt;thead>
+    …
+  &lt;/table>
 </code></pre>
-					<p>When the following code is run:</p>
+          <p>When the following code is run:</p>
 <pre><code class="language-javascript">document.getElementById( 'my-table' ).deleteCaption();</code></pre>
 
-					<p>What is the result?</p>
-				</span>
-				</legend>
-				<ul class="choices">
-					<li><input type="radio" name="q2" value="a" id="q2-a"><label for="q2-a">Nothing happens</label></li>
-					<li><input type="radio" name="q2" value="b" id="q2-b"><label for="q2-b">DOMException <code>NOT_FOUND_ERR</code> is raised</label></li>
-				</ul>
-			</fieldset>
+          <p>What is the result?</p>
+        </span>
+        </legend>
+        <ul class="choices">
+          <li><input type="radio" name="q2" value="a" id="q2-a"><label for="q2-a">Nothing happens</label></li>
+          <li><input type="radio" name="q2" value="b" id="q2-b"><label for="q2-b">DOMException <code>NOT_FOUND_ERR</code> is raised</label></li>
+        </ul>
+      </fieldset>
 
-			<div class="note">
-				<p>The correct answer is <b>nothing happens</b>.</p>
+      <div class="note">
+        <p>The correct answer is <b>nothing happens</b>.</p>
 
-				<ul>
-					<li>There is no caption to remove. The specification states it must remove a caption “if any”—allowing for the possibility that tables may not have a caption may not be present.</li>
-					<li>The <code>NOT_FOUND_ERR</code> comes from the <code>removeChild()</code> method in the DOM specification, but that does not apply here. It is important to read the specification and not make assumptions based on similarities in other standards. If an exception were required, it would be clearly documented here.</li>
-				</ul>
-			</div>
-		</li>
+        <ul>
+          <li>There is no caption to remove. The specification states it must remove a caption “if any”—allowing for the possibility that tables may not have a caption may not be present.</li>
+          <li>The <code>NOT_FOUND_ERR</code> comes from the <code>removeChild()</code> method in the DOM specification, but that does not apply here. It is important to read the specification and not make assumptions based on similarities in other standards. If an exception were required, it would be clearly documented here.</li>
+        </ul>
+      </div>
+    </li>
 
 
 
-		<li>
-			<fieldset id="q3">
-				<legend>
-					<span class="label">
-					<p>Given a web page containing the following table:</p>
+    <li>
+      <fieldset id="q3">
+        <legend>
+          <span class="label">
+          <p>Given a web page containing the following table:</p>
 <pre><code class="language-markup">
-	&lt;table id="my-table">
-		&lt;caption>My caption&lt;/caption>
-		&lt;thead>
-		…
-	&lt;/table>
+  &lt;table id="my-table">
+    &lt;caption>My caption&lt;/caption>
+    &lt;thead>
+    …
+  &lt;/table>
 </code></pre>
-					<p>When the following code is run:</p>
+          <p>When the following code is run:</p>
 <pre><code class="language-javascript">var result = document.getElementById( 'my-table' ).deleteCaption();</code></pre>
 
-					<p>What is the value of <code>result</code>?</p>
-				</span>
-				</legend>
-				<ul class="choices">
-					<li><input type="radio" name="q3" value="a" id="q3-a"><label for="q3-a">null</label></li>
-					<li><input type="radio" name="q3" value="b" id="q3-b"><label for="q3-b">the <code>caption</code> element that was removed</label></li>
-					<li><input type="radio" name="q3" value="c" id="q3-c"><label for="q3-c">true</label></li>
-					<li><input type="radio" name="q3" value="d" id="q3-d"><label for="q3-d">undefined</label></li>
-					<li><input type="radio" name="q3" value="e" id="q3-e"><label for="q3-e">void</label></li>
-				</ul>
-			</fieldset>
+          <p>What is the value of <code>result</code>?</p>
+        </span>
+        </legend>
+        <ul class="choices">
+          <li><input type="radio" name="q3" value="a" id="q3-a"><label for="q3-a">null</label></li>
+          <li><input type="radio" name="q3" value="b" id="q3-b"><label for="q3-b">the <code>caption</code> element that was removed</label></li>
+          <li><input type="radio" name="q3" value="c" id="q3-c"><label for="q3-c">true</label></li>
+          <li><input type="radio" name="q3" value="d" id="q3-d"><label for="q3-d">undefined</label></li>
+          <li><input type="radio" name="q3" value="e" id="q3-e"><label for="q3-e">void</label></li>
+        </ul>
+      </fieldset>
 
-			<div class="note">
-				<p>The correct answer is <strong>undefined</strong>.</p>
-				<ul>
-					<li><code>null</code> is incorrect. Although the spec states <code>void</code> and you may guess that this translates to <code>null</code>, the Web IDL spec clarifies that <code>undefined</code> is the correct type to use where <code>void</code> is specified.</li>
-					<li>The DOM method <code>removeChild()</code> returns the element that was removed, but <code>deleteCaption()</code> is specified to return <code>void</code>. It is important to read the specification and not make assumptions based on similarities in other standards.</li>
-					<li>The method does not return a boolean indicating whether or not it was successful. There is nothing in the specification to indicate a boolean would be expected.</li>
-					<li><code>undefined</code> is the correct way a browser will return <code>void</code>, as documented in the Web IDL specification.</li>
-					<li><code>void</code> is what the specification states is returned, but it is important to note that the specification is written in Web IDL. When the spec is implemented in a web browser, this method will be exposed via ECMAScript. ECMAScript does not have a <code>void</code> value. The equivalent of <code>void</code> in ECMAScript is <code>undefined</code>. This is documented in the Web IDL specification.</li>
-				</ul>
+      <div class="note">
+        <p>The correct answer is <strong>undefined</strong>.</p>
+        <ul>
+          <li><code>null</code> is incorrect. Although the spec states <code>void</code> and you may guess that this translates to <code>null</code>, the Web IDL spec clarifies that <code>undefined</code> is the correct type to use where <code>void</code> is specified.</li>
+          <li>The DOM method <code>removeChild()</code> returns the element that was removed, but <code>deleteCaption()</code> is specified to return <code>void</code>. It is important to read the specification and not make assumptions based on similarities in other standards.</li>
+          <li>The method does not return a boolean indicating whether or not it was successful. There is nothing in the specification to indicate a boolean would be expected.</li>
+          <li><code>undefined</code> is the correct way a browser will return <code>void</code>, as documented in the Web IDL specification.</li>
+          <li><code>void</code> is what the specification states is returned, but it is important to note that the specification is written in Web IDL. When the spec is implemented in a web browser, this method will be exposed via ECMAScript. ECMAScript does not have a <code>void</code> value. The equivalent of <code>void</code> in ECMAScript is <code>undefined</code>. This is documented in the Web IDL specification.</li>
+        </ul>
 
-				<p>
-					<small><a href="http://www.w3.org/TR/WebIDL/#es-void">4.2.2. void — ECMAScript type mapping — Web IDL</a></small>
-				</p>
-			</div>
-		</li>
+        <p>
+          <small><a href="http://www.w3.org/TR/WebIDL/#es-void">4.2.2. void — ECMAScript type mapping — Web IDL</a></small>
+        </p>
+      </div>
+    </li>
 
-	</ol>
+  </ol>
 
 </form>
 
