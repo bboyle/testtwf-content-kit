@@ -87,7 +87,7 @@
       </fieldset>
 
       <div class="note">
-        <p>The correct answer is <b>the first caption is removed</b>.</p>
+        <p>The correct answer is <strong>the first caption is removed</strong>.</p>
 
         <ul>
           <li>The specification clearly states the first caption is removed.</li>
@@ -95,6 +95,13 @@
           <li>The specification specifically states that only the first caption will be removed. The second caption will not be removed.</li>
           <li>Although a <code>table</code> should not have more than one <code>caption</code>, nothing prevents authors from making mistakes. Specifications need to go beyond what happens with valid markup and provide consistent advice for handling markup errors. In this case, the specification clearly states that the first caption will be removed.</li>
         </ul>
+
+        <hr>
+
+        <blockquote>
+          <p>The <code>deleteCaption()</code> method must remove the <mark>first</mark> <code>caption</code> element child of the <code>table</code> element, if any.</p>
+        </blockquote>
+
       </div>
     </li>
 
@@ -129,6 +136,12 @@
           <li>There is no caption to remove. The specification states it must remove a caption “if any”—allowing for the possibility that tables may not have a caption may not be present.</li>
           <li>The <code>NOT_FOUND_ERR</code> comes from the <code>removeChild()</code> method in the DOM specification, but that does not apply here. It is important to read the specification and not make assumptions based on similarities in other standards. If an exception were required, it would be clearly documented here.</li>
         </ul>
+
+        <hr>
+
+        <blockquote>
+          <p>The <code>deleteCaption()</code> method must remove the first <code>caption</code> element child of the <code>table</code> element, <mark>if any</mark>.</p>
+        </blockquote>
       </div>
     </li>
 
@@ -170,9 +183,16 @@
           <li><code>void</code> is what the specification states is returned, but it is important to note that the specification is written in Web IDL. When the spec is implemented in a web browser, this method will be exposed via ECMAScript. ECMAScript does not have a <code>void</code> value. The equivalent of <code>void</code> in ECMAScript is <code>undefined</code>. This is documented in the Web IDL specification.</li>
         </ul>
 
-        <p>
-          <small><a href="http://www.w3.org/TR/WebIDL/#es-void">4.2.2. void — ECMAScript type mapping — Web IDL</a></small>
-        </p>
+        <hr>
+
+        <blockquote>
+          <code class="language-idl"><mark>void</mark> deleteCaption();</code>
+        </blockquote>
+
+        <blockquote>
+          <p>Functions on platform objects that implement an operation whose IDL specifies a <strong>void</strong> return type must return the <strong>undefined</strong> value.</p>
+          <cite><small><a href="http://www.w3.org/TR/WebIDL/#es-void">4.2.2. void — ECMAScript type mapping — Web IDL</a></small></cite>
+        </blockquote>
       </div>
     </li>
 
@@ -236,6 +256,8 @@
       <div class="note">
         <p>The caption is <strong>not removed</strong>. The specification specifically refers to <em>child</em> elements, not descendents.</p>
 
+        <hr>
+
         <blockquote>
           <p>The <code>deleteCaption()</code> method must remove the first <code>caption</code> element <mark>child of the <code>table</code> element</mark>, if any.</p>
         </blockquote>
@@ -285,6 +307,12 @@
 
       <div class="note">
         <p>The <code>svg:caption</code> <strong>will not</strong> be removed. The <code>deleteCaption()</code> method relates specifically to the HTML <code>table</code> and <code>caption</code> elements and does not specify any action for other elements—including <ccode>caption</ccode> elements from a different namespace.</p>
+
+        <hr>
+
+        <blockquote>
+          <p>The <code>deleteCaption()</code> method must remove the first <mark><code>caption</code> element</mark> child of the <mark><code>table</code> element</mark>, if any.</p>
+        </blockquote>
 
         <blockquote>
           <p>Except where otherwise stated, all elements defined or mentioned in this specification are in the HTML namespace ("http://www.w3.org/1999/xhtml"), and all attributes defined or mentioned in this specification have no namespace.</p>
