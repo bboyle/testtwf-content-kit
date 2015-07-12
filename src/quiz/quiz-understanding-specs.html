@@ -184,6 +184,71 @@
           <p>Given a web page containing the following table:</p>
 <pre><code class="language-markup">
   &lt;table id="my-table">
+    &lt;thead>
+    …
+    &lt;tbody>
+      &lt;tr>
+        &lt;td>
+          &lt;table>
+            &lt;caption>My caption&lt;/caption>
+            …
+  &lt;/table>
+</code></pre>
+          <p>When the following code is run:</p>
+<pre><code class="language-javascript">document.getElementById( 'my-table' ).deleteCaption();</code></pre>
+
+          <p>What is the result?</p>
+        </span>
+        </legend>
+        <ul class="choices">
+          <li><input type="radio" name="q4" value="a" id="q4-a"><label for="q4-a">
+          The nested caption is removed
+<pre><code class="language-markup">
+&lt;table id="my-table">
+  &lt;thead>
+  …
+  &lt;tbody>
+    &lt;tr>
+      &lt;td>
+        &lt;table>
+          …
+&lt;/table>
+</code></pre>
+          </label></li>
+          <li><input type="radio" name="q4" value="b" id="q4-b"><label for="q4-b">
+          The nested caption is not removed
+<pre><code class="language-markup">
+&lt;table id="my-table">
+  &lt;thead>
+  …
+  &lt;tbody>
+    &lt;tr>
+      &lt;td>
+        &lt;table>
+          &lt;caption>My caption&lt;/caption>
+          …
+&lt;/table>
+</code></pre>
+          </label></li>
+        </ul>
+      </fieldset>
+
+      <div class="note">
+        <p>The caption is <strong>not removed</strong>. The specification specifically refers to <em>child</em> elements, not descendents.</p>
+
+        <blockquote>
+          <p>The <code>deleteCaption()</code> method must remove the first <code>caption</code> element <mark>child of the <code>table</code> element</mark>, if any.</p>
+        </blockquote>
+      </div>
+    </li>
+
+    <li>
+      <fieldset id="q5">
+        <legend>
+          <span class="label">
+          <p>Given a web page containing the following table:</p>
+<pre><code class="language-markup">
+  &lt;table id="my-table">
     &lt;svg:caption xmlns:svg="http://www.w3.org/2000/svg">My caption&lt;/svg:caption>
     &lt;thead>
     …
@@ -196,7 +261,7 @@
         </span>
         </legend>
         <ul class="choices">
-          <li><input type="radio" name="q4" value="a" id="q4-a"><label for="q4-a">
+          <li><input type="radio" name="q5" value="a" id="q5-a"><label for="q5-a">
           The caption is removed
 <pre><code class="language-markup">
   &lt;table id="my-table">
@@ -205,7 +270,7 @@
   &lt;/table>
 </code></pre>
           </label></li>
-          <li><input type="radio" name="q4" value="b" id="q4-b"><label for="q4-b">
+          <li><input type="radio" name="q5" value="b" id="q5-b"><label for="q5-b">
           The caption is not removed
 <pre><code class="language-markup">
   &lt;table id="my-table">
