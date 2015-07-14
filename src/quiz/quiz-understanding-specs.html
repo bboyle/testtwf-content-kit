@@ -12,7 +12,7 @@
 
 <p>Reading web standards and understanding the details is a skill. A simple statement about one element may imply more detail than is immediately apparent. It is also important not to invent details which are not explicitly documented.</p>
 
-<p>Take the quiz below to test your improve your understanding.</p>
+<p>Take the quiz below to improve your understanding.</p>
 
 <blockquote>
   <code class="language-idl">void deleteCaption();</code>
@@ -90,10 +90,9 @@
         <p>The correct answer is <strong>the first caption is removed</strong>.</p>
 
         <ul>
-          <li>The specification clearly states the first caption is removed.</li>
-          <li>The last caption would not be removed. The specification calls for the <strong>first</strong> caption to be removed.</li>
-          <li>The specification specifically states that only the first caption will be removed. The second caption will not be removed.</li>
-          <li>Although a <code>table</code> should not have more than one <code>caption</code>, nothing prevents authors from making mistakes. Specifications need to go beyond what happens with valid markup and provide consistent advice for handling markup errors. In this case, the specification clearly states that the first caption will be removed.</li>
+          <li class="b">The last caption would not be removed. The specification calls for the <strong>first</strong> caption to be removed.</li>
+          <li class="c">The specification states that the first caption will be removed. It does not mention any other captions. <abbr title="User Agents">UAs</abbr> must not do anything unless explicitly documented in the spec. The second caption should not be removed.</li>
+          <li class="d">Although a <code>table</code> should not have more than one <code>caption</code>, nothing prevents authors from making mistakes. Specifications need to go beyond what happens with valid markup and provide consistent advice for handling markup errors. In this case, the specification states that the first caption will be removed.</li>
         </ul>
 
         <hr>
@@ -133,8 +132,8 @@
         <p>The correct answer is <b>nothing happens</b>.</p>
 
         <ul>
-          <li>There is no caption to remove. The specification states it must remove a caption “if any”—allowing for the possibility that tables may not have a caption may not be present.</li>
-          <li>The <code>NOT_FOUND_ERR</code> comes from the <code>removeChild()</code> method in the DOM specification, but that does not apply here. It is important to read the specification and not make assumptions based on similarities in other standards. If an exception were required, it would be clearly documented here.</li>
+          <li class="a">There is no caption to remove. The specification states it must remove a caption “if any”—allowing for the possibility that tables may not have a caption may not be present.</li>
+          <li class="b">The <code>NOT_FOUND_ERR</code> comes from the <code>removeChild()</code> method in the DOM specification, but that does not apply here. It is important to not make assumptions based on similarities in other standards. If an exception were required, it would need to be documented in the specification.</li>
         </ul>
 
         <hr>
@@ -176,11 +175,11 @@
       <div class="note">
         <p>The correct answer is <strong>undefined</strong>.</p>
         <ul>
-          <li><code>null</code> is incorrect. Although the spec states <code>void</code> and you may guess that this translates to <code>null</code>, the Web IDL spec clarifies that <code>undefined</code> is the correct type to use where <code>void</code> is specified.</li>
-          <li>The DOM method <code>removeChild()</code> returns the element that was removed, but <code>deleteCaption()</code> is specified to return <code>void</code>. It is important to read the specification and not make assumptions based on similarities in other standards.</li>
-          <li>The method does not return a boolean indicating whether or not it was successful. There is nothing in the specification to indicate a boolean would be expected.</li>
-          <li><code>undefined</code> is the correct way a browser will return <code>void</code>, as documented in the Web IDL specification.</li>
-          <li><code>void</code> is what the specification states is returned, but it is important to note that the specification is written in Web IDL. When the spec is implemented in a web browser, this method will be exposed via ECMAScript. ECMAScript does not have a <code>void</code> value. The equivalent of <code>void</code> in ECMAScript is <code>undefined</code>. This is documented in the Web IDL specification.</li>
+          <li class="a">Although the spec states <code>void</code> and you may guess that this translates to <code>null</code>, the Web IDL spec clarifies that <code>undefined</code> is the correct type to use where <code>void</code> is specified, rather than <code>null</code>.</li>
+          <li class="b">The DOM method <code>removeChild()</code> returns the element that was removed, but <code>deleteCaption()</code> is specified to return <code>void</code>. It is important to read the specification and not make assumptions based on similarities in other standards.</li>
+          <li class="c">The method does not return a boolean indicating whether or not it was successful. There is nothing in the specification to indicate a boolean would be expected.</li>
+          <li class="d"><code>undefined</code> is the correct way a browser will return <code>void</code>, as documented in the Web IDL specification.</li>
+          <li class="e"><code>void</code> is what the specification states is returned, but it is important to note that the specification is written in Web IDL. When the spec is implemented in a web browser, this method will be exposed via ECMAScript. ECMAScript does not have a <code>void</code> value. The equivalent of <code>void</code> in ECMAScript is <code>undefined</code>. This is documented in the Web IDL specification.</li>
         </ul>
 
         <hr>
