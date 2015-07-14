@@ -91,7 +91,7 @@
 
         <ul>
           <li class="b">The last caption would not be removed. The specification calls for the <strong>first</strong> caption to be removed.</li>
-          <li class="c">The specification states that the first caption will be removed. It does not mention any other captions. <abbr title="User Agents">UAs</abbr> must not do anything unless explicitly documented in the spec. The second caption should not be removed.</li>
+          <li class="c">The specification states that the first caption will be removed. It does not mention any other captions. <abbr title="User Agents">UAs</abbr> must not do anything unless explicitly documented in the spec. The second caption will not be changed by <code>deleteCaption()</code>.</li>
           <li class="d">Although a <code>table</code> should not have more than one <code>caption</code>, nothing prevents authors from making mistakes. Specifications need to go beyond what happens with valid markup and provide consistent advice for handling markup errors. In this case, the specification states that the first caption will be removed.</li>
         </ul>
 
@@ -132,8 +132,8 @@
         <p>The correct answer is <b>nothing happens</b>.</p>
 
         <ul>
-          <li class="a">There is no caption to remove. The specification states it must remove a caption “if any”—allowing for the possibility that tables may not have a caption may not be present.</li>
-          <li class="b">The <code>NOT_FOUND_ERR</code> comes from the <code>removeChild()</code> method in the DOM specification, but that does not apply here. It is important to not make assumptions based on similarities in other standards. If an exception were required, it would need to be documented in the specification.</li>
+          <li class="a">There is no caption to remove. The specification states it must remove a caption “if any”—allowing for the possibility that a table may not have any caption elements.</li>
+          <li class="b">The <code>NOT_FOUND_ERR</code> comes from the <code>removeChild()</code> method in the DOM specification, but that does not apply here. It is important to not make assumptions based on similar features in other standards. If an exception were required, it would need to be documented in the specification.</li>
         </ul>
 
         <hr>
