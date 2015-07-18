@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/bboyle/testtwf-content-kit#readme",
   "dependencies": {
+    "jquery": "^2.1.4",
     "prismjs": "0.0.1"
   }
 }
