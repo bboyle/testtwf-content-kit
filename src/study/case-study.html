@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Case study: discovering an interoperability issue</title>
+	<link href="../../css/main.css" rel="stylesheet">
+	<link href="../../node_modules/prismjs/themes/prism.css" rel="stylesheet">
+</head>
+<body>
+
+	<h1>Case study: discovering an interoperability issue</h1>
+
+	<p>This is a run-through of one developers approach to Test the Web Forward.
+	It will show you ways you can be involved, some of the challenges you may face, and the reward at the end.</p>
+
+
+	<h2>Scenario</h2>
+
+	<p><code class="language-markup">&lt;label contenteditable="true"&gt;My label&lt;/label&gt;</code> behaves differently in Firefox.</p>
+
+	<p>I discovered this when testing out an editing interface for a product at work.
+	Searching lead me to this question on stackoverflow (<a href="http://stackoverflow.com/questions/13611904/contenteditable-on-label-tag-does-not-work-in-firefox
+	">Contenteditable on label tag does not work in firefox</a>) and this bug report (<a href="https://bugzilla.mozilla.org/show_bug.cgi?id=853519">Bug 853519 - contenteditable does not work properly on &lt;label&gt; elements</a>).</p>
+
+	<p><strong>Inconsistent behaviour is the perfect opportunity to test the web forward!</strong></p>
+
+
+	<h3>Make a plan</h3>
+
+	<ul>
+		<li>check the web specification for <code class="language-markup">LABEL</code> and <code class="language-markup">contenteditable</code></li>
+		<li>check existing tests in Test the Web Forward</li>
+		<li>write a new test</li>
+		<li>determine where to add the test</li>
+		<li>submit the test</li>
+	</ul>
+
+<script src="../../node_modules/prismjs/prism.js"></script>
+
+</body>
+</html>
