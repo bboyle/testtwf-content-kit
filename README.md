@@ -34,7 +34,7 @@ This is the Test the Web Forward Content Kit. It contains everything you need to
 
 [Test the Web Forward](http://testthewebforward.org/) is W3C's one stop shop for Open Web Platform testing. This content kit will help you teach developers what they need to know to get involved. It is ideally suited to authors with experience working closely with the browser APIs. Their expertise may be broad across a number of areas (e.g. DOM) or specific to one particular specification. Library/polyfill authors in particular have detailed implementation knowledge that would be useful for contributing to interoperability tests.
 
-To get started, visit [This project's index file](index.html).
+To get started, visit [this project's index file](index.html).
 
 You can get much more detailed instructions on writing a content kit from our [Making a new content kit guide](http://chrisdavidmills.github.io/content-kit-guide/).
 
