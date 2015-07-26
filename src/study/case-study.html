@@ -25,15 +25,50 @@
 	<p><strong>Inconsistent behaviour is the perfect opportunity to test the web forward!</strong></p>
 
 
-	<h3>Make a plan</h3>
+	<h2>Make a plan</h2>
 
-	<ul>
+	<ol>
 		<li>check the web specification for <code class="language-markup">LABEL</code> and <code class="language-markup">contenteditable</code></li>
+		<li>check browser behaviour</li>
 		<li>check existing tests in Test the Web Forward</li>
 		<li>write a new test</li>
 		<li>determine where to add the test</li>
 		<li>submit the test</li>
+	</ol>
+
+
+	<h2>Check the spec</h2>
+
+	<p>I started with reading up on both the <code>label</code> element and the <code>contenteditable</code> attribute.
+	This was difficult.
+	The spec is vague about the "activation behaviour" of labels
+	(because it is different for text fields and checkboxes, and might be platform dependent), and the editing API is in draft and doesn't talk too specifically about what happens when you click (or activate) an editable element.</p>
+
+	<p>I didn't come out of this with a clear understanding of what should happen. I'm going to create a test case and check more browsers.</p>
+
+
+	<h3>Learnings</h3>
+	<ul>
+		<li><dfn>activation behaviour</dfn>: the fancy name for "what happens when you click on the something" (Of course, elements can be activated with the keyboard, voice commands, etc. It is not all about clicks, so the official term is not specifically about clicks.)</li>
+		<li>interactive content does not include editable elements</li>
 	</ul>
+
+
+	<h3>References</h3>
+	<ul>
+		<li><a href="https://html.spec.whatwg.org/multipage/forms.html#the-label-element">The <code>label</code> element</a>
+			<ul>
+				<li><a href="https://html.spec.whatwg.org/multipage/dom.html#interactive-content-2">Interactive content</a></li>
+			</ul>
+		</li>
+		<li><a href="https://html.spec.whatwg.org/multipage/interaction.html#contenteditable">Making document regions editable: The <code>contenteditable</code> content attribute</a>
+			<ul>
+				<li><a href="https://html.spec.whatwg.org/multipage/interaction.html#editable">Editing APIs</a></li>
+				<li><a href="https://dvcs.w3.org/hg/editing/raw-file/tip/editing.html">HTML Editing APIs</a></li>
+			</ul>
+		</li>
+	</ul>
+
 
 <script src="../../node_modules/prismjs/prism.js"></script>
 
