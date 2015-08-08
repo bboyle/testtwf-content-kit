@@ -2,13 +2,13 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Case study: discovering an interoperability issue</title>
+	<title>Case study: label and contenteditable</title>
 	<link href="../../css/main.css" rel="stylesheet">
 	<link href="../../node_modules/prismjs/themes/prism.css" rel="stylesheet">
 </head>
 <body>
 
-	<h1>Case study: discovering an interoperability issue</h1>
+	<h1>Case study: label and contenteditable</h1>
 
 	<p>This is a run-through of one developer's approach to Test the Web Forward.
 	It will show you ways you can be involved, some of the challenges you may face, and the reward at the end.</p>
@@ -104,12 +104,14 @@
 	</ul>
 	<p>Note that these new labels are not appropriate if you are writing valid, interoperable HTML. The point here is to test behaviour in the browsers—including how they behave with unusual or invalid HTML. We're not testing valid HTML, that's what HTML validators are for.</p>
 
-	<p>There were consistent results across most browsers with this. Chrome, IE11 and Edge all agreed that the extra labels would keep focus, which left the original test as the single failure. I feel like I've started to isolate the interoperability issue. Unfortunately I found a new isue: every test failed in Firefox. What? That is explored in <a href="case-study-label-focus-ff.html">Case study: <code>focus()</code> and <code>label</code> in Firefox</a>.</p>
+	<p>There were consistent results across most browsers with this. Chrome, IE11 and Edge all agreed that the extra labels would keep focus, which left the original test as the single failure. I feel like I've started to isolate the interoperability issue. Unfortunately I found a new isue: every test failed in Firefox. What? That is explored in <a href="case-study-label-focus.html">Case study: <code>focus()</code> and <code>label</code> in Firefox</a>.</p>
+
+<em>DRAFT: to be continued…</em>
 
 	<h3>Learnings</h3>
 	<ul>
 		<li><code>document.activeElement</code> tells you which element is "active" (has focus)</li>
-		<li>Running <code>.click()</code> in javascript is not the same as manually clicking on an element with your mouse. I found the tests all failed until I used a combination of both <code>.focus()</code> and <code>.click()</code></li>
+		<li>Running <code>.click()</code> in javascript is not the same as manually clicking on an element with your mouse. I found the tests all failed until I used a combination of both <code>.focus()</code> and <code>.click()</code>. For manual testing I used the developer console with this <a href="test-label-contenteditable.html">simple test page</a>.</li>
 	</ul>
 
 <script src="../../node_modules/prismjs/prism.js"></script>
