@@ -94,7 +94,7 @@
 		<p>it's worth noting that accompanying a spec bug report with a reduced test case like this is very strongly encouraged because it makes the bug report much more precise and easy to understand. So in no sense should you "not write the test"; it's just that when you come to get the test reviewed (or review it yourself) it might turn out that you have to take a slightly different course of action than normal.</p>
 	</blockquote>
 
-	<p>This lead to expanding the test on codepen. I wanted to explore if this inconsistent behaviour could be narrowed down. To do this, I think about different "states" a <code>label</code> could be in. Here, it is the combination of <code>contenteditable</code> and <code>for</code> attributes that are interesting. I came up with these extra contexts:</p>
+	<p>This led to expanding the test on codepen. I wanted to explore if this inconsistent behaviour could be narrowed down. To do this, I think about different "states" a <code>label</code> could be in. Here, it is the combination of <code>contenteditable</code> and <code>for</code> attributes that are interesting. I came up with these extra contexts:</p>
 	<ul>
 		<li>a label linked to a form control, that is contenteditable (I already had this)</li>
 		<li>a label without a for attribute</li>
