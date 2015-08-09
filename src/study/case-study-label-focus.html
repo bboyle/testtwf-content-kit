@@ -17,17 +17,49 @@
 	<h2>Scenario</h2>
 
 	<p>While exploring <a href="case-study-label-contenteditable.html">case study: label and contenteditable</a> I wound up with another issue.
-	My tests involved the use of <code>focus()</code> and <code>click()</code> to test whether a label that was contenteditable kept focus or passed it to the associated form control.
-	All of the tests failed in Firefox. Why?</p>
+	My tests involved the use of <code>focus()</code> and <code>click()</code> to test whether a label that was contenteditable kept focus or passed it to the associated form control.</p>
+
+	<p>All of the tests failed in Firefox. Why?</p>
 
 	<p>View the tests: <a href="http://codepen.io/bboyle/pen/MwPXMq">codepen: label@contenteditable tests</a></p>
 
-<em>DRAFT: to be continued…</em>
-
 	<h2>Narrowing down the issue</h2>
+
+	<p>I did some testing to isolate what was failing. I tried a couple of things in a test page using the developer console. I compared <code>label</code> elements with <code>div</code> (a pretty generic element). I kept <code>contenteditable="true"</code> on both in case that related to them being able to receive focus. I event started to experiment with <code>tabindex="-1"</code> (to allow them to get focus) but decided that was introducing more variables rather than narrowing it down. I'm happy with the simple test case I ended up with:</p>
 
 	<p data-height="500" data-theme-id="3818" data-slug-hash="XbGXmG" data-default-tab="result" data-user="bboyle" class='codepen'>See the Pen <a href='http://codepen.io/bboyle/pen/XbGXmG/'>focus() and activeElement tests</a> by Ben Boyle (<a href='http://codepen.io/bboyle'>@bboyle</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
 	<script async src="//assets.codepen.io/assets/embed/ei.js"></script>
+
+	<p>In Firefox, <code>document.activeElement</code> is set to the <code>div</code> after calling <code>focus()</code>, but this does not work on the <code>label</code>. Note that manually clicking on the element with the mouse <em>does</em> set <code>document.activeElement</code>. So, this test is specifically about calling <code>focus()</code> in JavaScript, on a <code>label</code> that is <code>contenteditable</code>. Now I know what to research in the specifications!</p>
+
+	<h2>Check the spec</h2>
+
+	<h3>focus()</h3>
+
+	<p>I started with <code>document.activeElement</code> and read the <a href="https://developer.mozilla.org/en-US/docs/Web/API/Document/activeElement">MDN page Document.activeElement</a>. Please note that MDN itself is not an official specification—but can be a good place to learn from. A link to formal specifications is always included at the end of the content and links to <a href="https://html.spec.whatwg.org/multipage/interaction.html#dom-document-activeelement">the definition of 'activeElement' in the HTML Living Standard</a>. Even better, scrolling up a bit reveals this to be part of <a href="https://html.spec.whatwg.org/multipage/interaction.html#focus-management-apis">6.4.6 Focus management APIs</a>—that sounds promising!</p>
+
+	<p>The key parts I read—and <em>my understanding of them</em>—are</p>
+	<dl>
+		<dt><code>document.activeElement</code></dt>
+		<dd>This property should reference the element that has focus, at all times.</dd>
+
+		<dt><code>element.focus()</code></dt>
+		<dd>Used to set focus on any element.</dd>
+
+		<dt>focusable-area</dt>
+		<dd>There are notes specific to some elements, but nothing about <code>label</code> that I can tell. The final entry in the table is about "any other element" and that seems to apply to my test case.</dd>
+
+		<dt>focusing steps, focus update steps</dt>
+		<dd>Whew, there is a lot of detail here! Some of it is familiar, such as the <code>focus</code> event we can use our scripts. The part about a <i>defined activation behaviour</i> was interesting, but related to the <code>input</code> element, not <code>label</code>.</dd>
+	</dl>
+
+	<p>I haven't seen anything that contradicts my expectations yet. I also need to change if there is any behaviour defined for <code>label</code> or <code>contenteditable</code> which relates to <code>focus</code>.</p>
+
+	<h3>label</h3>
+
+	<h3>contenteditable</h3>
+
+	<mark>TODO work in progress…</mark>
 
 
 <script src="../../node_modules/prismjs/prism.js"></script>
