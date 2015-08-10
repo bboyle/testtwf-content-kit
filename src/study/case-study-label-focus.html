@@ -57,9 +57,22 @@
 
 	<h3>label</h3>
 
+	<p>Nothing specific in here about what focus on the <code>label</code> element should do relating to this test scenario. The part about labels passing the activation behaviour on to descendent elements (e.g. a nested checkbox) is interesting—but in this test I have a single label with text content only.</p>
+
+	<h4>Learnings</h4>
+
+	<dl>
+		<dt><code>label.control</code></dt>
+		<dd>Seriously!? How long as this shortcut property to find the control associated with the label existed? I could be using that…</dd>
+		<dt><code>control.labels</code></dt>
+		<dd>And the inverse! (List of all labels that reference a control.)</dd>
+	</dl>
+
 	<h3>contenteditable</h3>
 
-	<mark>TODO work in progress…</mark>
+	<p>Hmm, there really isn't much to glean from the specs here. I ended up searching <a href="https://w3c.github.io/editing/contentEditableEvents.html">Content Editable Events</a> for "focus". It's mentioned once and not relevant to the issue being tested here.</p>
+
+	<p>Time to check in with the Test the Web Forward team!</p>
 
 
 <script src="../../node_modules/prismjs/prism.js"></script>
