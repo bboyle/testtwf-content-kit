@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Understanding web specifications</title>
+  <link href="../../css/main.css" rel="stylesheet">
   <link href="../../node_modules/prismjs/themes/prism.css" rel="stylesheet">
   <link rel="stylesheet" href="quiz.css">
 </head>
@@ -15,8 +16,7 @@
 <p>Take the quiz below to improve your understanding.</p>
 
 <blockquote>
-  <code class="language-idl">void deleteCaption();</code>
-
+  <p><code class="language-idl">void deleteCaption();</code></p>
   <p>The <code>deleteCaption()</code> method must remove the first <code>caption</code> element child of the <code>table</code> element, if any.</p>
 </blockquote>
 
@@ -92,7 +92,7 @@
         <ul>
           <li class="b">The last caption would not be removed. The specification calls for the <strong>first</strong> caption to be removed.</li>
           <li class="c">The specification states that the first caption will be removed. It does not mention any other captions. <abbr title="User Agents">UAs</abbr> must not do anything unless explicitly documented in the spec. The second caption will not be changed by <code>deleteCaption()</code>.</li>
-          <li class="d">Although a <code>table</code> should not have more than one <code>caption</code>, nothing prevents authors from making mistakes. Specifications need to go beyond what happens with valid markup and provide consistent advice for handling markup errors. In this case, the specification states that the first caption will be removed.</li>
+          <li class="d">Although a <code>table</code> should not have more than one <code>caption</code>, nothing prevents authors from using more. Specifications need to go beyond what happens with valid markup and provide consistent advice for handling markup errors. In this case, the specification states that the first caption will be removed.</li>
         </ul>
 
         <hr>
@@ -133,7 +133,7 @@
 
         <ul>
           <li class="a">There is no caption to remove. The specification states it must remove a caption “if any”—allowing for the possibility that a table may not have any caption elements.</li>
-          <li class="b">The <code>NOT_FOUND_ERR</code> comes from the <code>removeChild()</code> method in the DOM specification, but that does not apply here. It is important to not make assumptions based on similar features in other standards. If an exception were required, it would need to be documented in the specification.</li>
+          <li class="b">The <code>NOT_FOUND_ERR</code> comes from the <code>removeChild()</code> method in the DOM specification, but that does not apply here. It is important to not make assumptions based on similar features in other standards. If an exception were required, it would be documented in the specification.</li>
         </ul>
 
         <hr>
@@ -176,7 +176,7 @@
         <p>The correct answer is <strong>undefined</strong>.</p>
         <ul>
           <li class="a">Although the spec states <code>void</code> and you may guess that this translates to <code>null</code>, the Web IDL spec clarifies that <code>undefined</code> is the correct type to use where <code>void</code> is specified, rather than <code>null</code>.</li>
-          <li class="b">The DOM method <code>removeChild()</code> returns the element that was removed, but <code>deleteCaption()</code> is specified to return <code>void</code>. It is important to read the specification and not make assumptions based on similarities in other standards.</li>
+          <li class="b">The DOM method <code>removeChild()</code> returns the element that was removed, but <code>deleteCaption()</code> is specified to return <code>void</code>. It is important to read the specification and not make assumptions based on behaviour specified for other contexts.</li>
           <li class="c">The method does not return a boolean indicating whether or not it was successful. There is nothing in the specification to indicate a boolean would be expected.</li>
           <li class="d"><code>undefined</code> is the correct way a browser will return <code>void</code>, as documented in the Web IDL specification.</li>
           <li class="e"><code>void</code> is what the specification states is returned, but it is important to note that the specification is written in Web IDL. When the spec is implemented in a web browser, this method will be exposed via ECMAScript. ECMAScript does not have a <code>void</code> value. The equivalent of <code>void</code> in ECMAScript is <code>undefined</code>. This is documented in the Web IDL specification.</li>
@@ -253,7 +253,7 @@
       </fieldset>
 
       <div class="note">
-        <p>The caption is <strong>not removed</strong>. The specification specifically refers to <em>child</em> elements, not descendents.</p>
+        <p>The caption is <strong>not removed</strong>. The specification refers to <em>child</em> elements, not descendents.</p>
 
         <hr>
 
@@ -324,6 +324,8 @@
 
 </form>
 
+
+  <p>Now that you've taken this quiz, try writing actual tests! Fork this <a href="http://codepen.io/bboyle/pen/ZGjdKY?editors=101">codepen starter</a> and have a go!</p>
 
 <script src="../../node_modules/prismjs/prism.js"></script>
 <script src="../../node_modules/jquery/dist/jquery.min.js"></script>
