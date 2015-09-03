@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Case study: table.deleteCaption()</title>
+	<link href="../../css/main.css" rel="stylesheet">
+	<link href="../../node_modules/prismjs/themes/prism.css" rel="stylesheet">
+</head>
+<body>
+
+	<h1>Case study: table.deleteCaption()</h1>
+
+	<p>This is a run-through of one developer's approach to Test the Web Forward.
+	It will show you ways you can be involved, some of the challenges you may face, and the reward at the end.</p>
+
+
+	<h2>Scenario</h2>
+
+	<p>I was faced with this challenge:</p>
+
+	<blockquote><p>look over a web specification similar to <a href="https://html.spec.whatwg.org/multipage/tables.html#htmltableelement">https://html.spec.whatwg.org/multipage/tables.html#htmltableelement</a> (focus on the “DOM interface” and specification of each method there) and tell us what tests you would write.</p></blockquote>
+
+	<h2>Check the spec</h2>
+
+	<p>I had a read of the spec and was surprised by all the methods I'd never heard of. I picked <code>deleteCaption()</code> as a place to start. It seemed relatively straightforward, with this one line description:</p>
+
+	<blockquote><p>The <code>deleteCaption()</code> method must remove the first <code>caption</code> element child of the <code>table</code> element, if any.</p></blockquote>
+
+	<p class="note">
+		<strong>Tip:</strong>
+		take the <a href="../quiz/quiz-understanding-specs.html">quiz on understanding web specifications</a>!
+	</p>
+
+	<p>I wrote a series of tests using <a href="https://qunitjs.com/">QUnit</a> (a test framework I was familiar with) and hosted it on <a href="http://codepen.io/bboyle/pen/YXzZyy/">codepen</a>.</p>
+
+	<h2>Test review</h2>
+
+	<p>I had feedback from James Graham and Josh Matthews about these tests—generally positive although they did highlight that there was a failure in Firefox.
+	This was due to using <code>innerText</code>. Switching to <a href="https://developer.mozilla.org/en-US/docs/Web/API/Node/textContent"><code>textContent</code></a> resolved that issue.</p>
+
+<p data-height="300" data-theme-id="3818" data-slug-hash="YXzZyy" data-default-tab="result" data-user="bboyle" class='codepen'>See the Pen <a href='http://codepen.io/bboyle/pen/YXzZyy/'>HTMLTableElement tests</a> by Ben Boyle (<a href='http://codepen.io/bboyle'>@bboyle</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+<script async src="//assets.codepen.io/assets/embed/ei.js"></script>
+
+	<h3>Learnings</h3>
+
+	<ul>
+		<li><code>innerText</code> is not standard—<code>textContent</code> is probably what you want (but not exactly the same)</li>
+		<li><code>innerHTML</code> <em>is</em> standard</li>
+	</ul>
+
+
+	<h2>Porting tests</h2>
+
+	<p>I had the opportunity to port these tests to Test the Web Forward. JavaScript tests are run by testharness.js. If you've used any JavaScript unit testing or assertion libraries before, you'll likely find it quite familiar. Read the <a href="http://testthewebforward.org/docs/testharness-library.html">Testharness.js API Documentation</a> for more info, or try the tutorial <a href="http://darobin.github.io/test-harness-tutorial/docs/using-testharness.html">using testharness.js</a>.</p>
+
+	<h2>Extending the tests</h2>
+
+	<p>James suggested 2 extra test cases: caption elements in nested tables, and caption elements from another namespace. I added these tests with his help.</p>
+
+<p data-height="700" data-theme-id="3818" data-slug-hash="KpobRx" data-default-tab="result" data-user="bboyle" class='codepen'>See the Pen <a href='http://codepen.io/bboyle/pen/KpobRx/'>deleteCaption() tests</a> by Ben Boyle (<a href='http://codepen.io/bboyle'>@bboyle</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+<script async src="//assets.codepen.io/assets/embed/ei.js"></script>
+
+
+	<h2>Submitting tests</h2>
+
+	<p>The ultimate goal of writing tests is to improve Test the Web Forward. To do this I had to <a href="https://github.com/w3c/web-platform-tests/blob/master/README.md">setup a local test environment</a> and follow the process for <a href="http://testthewebforward.org/docs/github-101.html">submitting tests</a>.</p>
+
+
+</body>
+</html>
